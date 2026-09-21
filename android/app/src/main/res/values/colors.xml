@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ic_launcher_background">#09090B</color>
+    <color name="kukapi_black">#09090B</color>
+    <color name="kukapi_amber">#F59E0B</color>
+    <color name="kukapi_white">#FFFFFF</color>
+    <color name="kukapi_zinc_500">#71717A</color>
+</resources>

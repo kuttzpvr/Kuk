@@ -1,0 +1,7 @@
+{
+  "name": "KUKAPI Fashion",
+  "description": "Production-ready mobile shopping app for KUKAPI Shopify fashion store featuring Storefront GraphQL integration, COD partial payment architecture, and Gemini AI shopping assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
