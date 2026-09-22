@@ -42,7 +42,17 @@ fun AccountScreen(
 
     val user by viewModel.currentUser.collectAsState()
     val currentUser = user
-    val displayName = currentUser?.let { "${it.firstName} ${it.lastName}" } ?: "Arjun Kapoor"
+    val displayName = currentUser?.let { session ->
+        listOf(session.firstName, session.lastName)
+            .filter { it.isNotBlank() }
+            .joinToString(" ")
+            .ifBlank { "Arjun Kapoor" }
+    } ?: "Arjun Kapoor"
+        listOf(session.firstName, session.lastName)
+            .filter { it.isNotBlank() }
+            .joinToString(" ")
+            .ifBlank { "Arjun Kapoor" }
+    } ?: "Arjun Kapoor"
     val orders by viewModel.orders.collectAsState()
     val addresses by viewModel.savedAddresses.collectAsState()
 
@@ -130,7 +140,7 @@ fun AccountScreen(
 
                     Column(modifier = Modifier.weight(1f)) {
                         Text(
-                            text = user?.firstName?.let { "$it ${user.lastName}" } ?: "Arjun Kapoor",
+                            text = displayName,
                             color = KukapiWhite,
                             fontSize = 18.sp,
                             fontWeight = FontWeight.Black

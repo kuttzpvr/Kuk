@@ -120,4 +120,3 @@ data class CustomerOrder(
     val items: List<OrderItem> = emptyList()
 )
 
-@Serializable
