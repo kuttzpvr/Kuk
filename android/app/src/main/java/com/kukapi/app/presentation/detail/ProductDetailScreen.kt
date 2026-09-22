@@ -306,7 +306,7 @@ fun ProductDetailScreen(
 
                 // Price Row
                 Row(
-                    verticalAlignment = Alignment.Baseline,
+                    verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
                     Text(

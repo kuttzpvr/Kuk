@@ -128,7 +128,7 @@ fun AccountScreen(
 
                     Column(modifier = Modifier.weight(1f)) {
                         Text(
-                            text = user?.name ?: "Arjun Kapoor",
+                            text = user?.firstName?.let { "$it ${user.lastName}" } ?: "Arjun Kapoor",
                             color = KukapiWhite,
                             fontSize = 18.sp,
                             fontWeight = FontWeight.Black
@@ -227,7 +227,7 @@ fun AccountScreen(
                                 Spacer(modifier = Modifier.height(8.dp))
                                 Button(
                                     onClick = {
-                                        viewModel.setCurrentTrackingOrder(order)
+                                        viewModel.setTrackingOrder(order)
                                         onTrackOrder(order)
                                     },
                                     colors = ButtonDefaults.buttonColors(containerColor = KukapiBlack),
