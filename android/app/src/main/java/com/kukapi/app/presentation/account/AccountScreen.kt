@@ -41,6 +41,8 @@ fun AccountScreen(
     val context = LocalContext.current
 
     val user by viewModel.currentUser.collectAsState()
+    val currentUser = user
+    val displayName = currentUser?.let { "${it.firstName} ${it.lastName}" } ?: "Arjun Kapoor"
     val orders by viewModel.orders.collectAsState()
     val addresses by viewModel.savedAddresses.collectAsState()
 
