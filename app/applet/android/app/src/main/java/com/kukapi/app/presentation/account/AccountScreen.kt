@@ -17,7 +17,6 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
@@ -41,7 +40,8 @@ fun AccountScreen(
     val context = LocalContext.current
     val user by viewModel.currentUser.collectAsState()
     val orders by viewModel.orders.collectAsState()
-    
+    val addresses by viewModel.savedAddresses.collectAsState()
+
     val currentUser = user
     val displayName = currentUser?.let { session ->
         listOf(session.firstName, session.lastName)
